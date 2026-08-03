@@ -1,0 +1,32 @@
+body{
+    background-color: bisque;
+}
+#h1{color:rgb(168, 145, 116); font-family:"press start 2P", "consolas", "sans-serif"; font-weight:bold; text-decoration:rgb(194, 165, 130) dotted underline;}
+#input1{background-color: cyan; border-radius: 15px; width: 300px; height: 100px; font-family:"press start 2P"; font-size: larger;}
+#button1{background-color: rgb(204, 148, 80); width: 300px;height: 100px ; font-family: "press start 2p"; font-size: larger; border-radius: 25px; }
+.btn {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    will-change: transform;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+}
+.container{
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    
+}
+#label1{
+    font-family: "press start 2p"; font-size: larger;
+}
+#selection1{
+height: 60px; width: 200px; font-size: large; font-family: "press start 2p";
+
+
+}
+#button2{background-color: rgb(204, 148, 80); width: 300px;height: 100px ; font-family: "consolas"; font-size: 50px; border-radius: 25px; }
+#h1-2{color:rgb(168, 145, 116); font-family:"press start 2P", "consolas", "sans-serif"; font-weight:bold; text-decoration:rgb(194, 165, 130) dotted underline; font-size: 50px; }
