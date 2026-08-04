@@ -179,3 +179,66 @@ transform:translateX(0);
     background-color: #4caf50;
     transition: width 0.1s linear;
 }
+
+/* ================= LEADERBOARD & SELECT STYLES ================= */
+
+/* Định vị select ở Top Right */
+.top-right-filter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Style và Animation Dropdown cho class .select */
+.select {
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    background-color: #d1a875;
+    color: #333;
+    border: 3px solid #8c683c;
+    border-radius: 12px;
+    cursor: pointer;
+    outline: none;
+    animation: dropdown 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes dropdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Danh sách Leaderboard Container */
+#leaderboard-list {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Box kết quả: Bisque đậm (#e6c29a) */
+.leaderboard-item {
+    background-color: #e6c29a;
+    border: 3px solid #b88d5c;
+    border-radius: 15px;
+    padding: 15px 20px;
+    font-family: "Press Start 2P", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.leaderboard-item span {
+    font-size: 13px;
+    color: #4a3520;
+    line-height: 1.4;
+}

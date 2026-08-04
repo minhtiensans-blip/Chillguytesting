@@ -1,20 +1,30 @@
+<!DOCTYPE html>
 <html>
-    <head><title>chill guy standing</title>
+<head>
+    <title>Chill Guy Leaderboard</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
-    </head>
-    <body>
-    <div class="container">
-<div>       
-<img src="chill guy.png"; height="550px"; width="400px">
-</div>
-<h1 id="h1-2";>Just a chill guy</h1>
-<a href="index.html">
-<button class="btn"; id="button2">Back</button>
-</a>
-<br>
+<body>
 
+<!-- Filter Select ở Top Right -->
+<div class="top-right-filter">
+    <select id="filterLevel" class="select" onchange="renderLeaderboard()">
+        <option value="1">All</option>
+        <option value="2">Easy</option>
+        <option value="3">Medium</option>
+        <option value="4">Hard</option>
+        <option value="5">Impossible</option>
+    </select>
 </div>
-    </body>
+
+<div class="container">
+    <h1 id="h1">LEADERBOARD</h1>
+    
+    <!-- Danh sách các item leaderboard -->
+    <div id="leaderboard-list"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>

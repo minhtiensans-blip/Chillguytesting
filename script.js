@@ -134,7 +134,7 @@ function showResultAndRedirect() {
         alert("Finished!\nScore: " + score + "\nYou're not chill ");
     } else if (score <= 50) {
         alert("Finished!\nScore: " + score + "\nYou're getting started ");
-    } else if (score <= 100) {
+    } else if (score <= 300) {
         alert("Finished!\nScore: " + score + "\nYou're pretty chill ");
     } else if (score <= 500) {
         alert("Finished!\nScore: " + score + "\nYou're a chill guy ");
@@ -260,4 +260,129 @@ function selectcheck() {
     } else if (select.value == "4") {
         window.location.href = "theexam4.html";
     }
+}
+
+
+
+// =================
+// SELECT EXAM (Lưu tên và chuyển trang)
+// =================
+
+function selectcheck() {
+    let nameInput = document.getElementById("input1");
+    let select = document.getElementById("selection1");
+
+    if (!nameInput || !select) return;
+
+    if (nameInput.value.trim() === "") {
+        nameInput.placeholder = "Enter Your Name";
+        nameInput.classList.add("errorInput");
+        return;
+    }
+
+    nameInput.classList.remove("errorInput");
+
+    // Lưu thông tin người chơi và thời gian bắt đầu
+    localStorage.setItem("playerName", nameInput.value.trim());
+    localStorage.setItem("startTime", Date.now());
+
+    if (select.value == "1") {
+        window.location.href = "theexam.html";
+    } else if (select.value == "2") {
+        window.location.href = "theexam2.html";
+    } else if (select.value == "3") {
+        window.location.href = "theexam3.html";
+    } else if (select.value == "4") {
+        window.location.href = "theexam4.html";
+    }
+}
+
+// =================
+// LEADERBOARD SYSTEM
+// =================
+
+function saveToLeaderboard() {
+    let playerName = localStorage.getItem("playerName") || "Anonymous";
+    let startTime = parseInt(localStorage.getItem("startTime")) || Date.now();
+    let timeSpent = Math.floor((Date.now() - startTime) / 1000); // Tính số giây đã làm
+
+    let currentLevel = "Easy";
+    const pathName = window.location.pathname.toLowerCase();
+    if (pathName.includes("theexam2.html")) {
+        currentLevel = "Medium";
+    } else if (pathName.includes("theexam3.html")) {
+        currentLevel = "Hard";
+    } else if (pathName.includes("theexam4.html")) {
+        currentLevel = "Impossible";
+    }
+
+    let leaderboard = JSON.parse(localStorage.getItem("leaderboardData")) || [];
+
+    leaderboard.push({
+        name: playerName,
+        level: currentLevel,
+        time: timeSpent + "s",
+        score: score
+    });
+
+    localStorage.setItem("leaderboardData", JSON.stringify(leaderboard));
+}
+
+function renderLeaderboard() {
+    let container = document.getElementById("leaderboard-list");
+    let filter = document.getElementById("filterLevel");
+    if (!container || !filter) return;
+
+    let leaderboard = JSON.parse(localStorage.getItem("leaderboardData")) || [];
+    let filterValue = filter.value;
+
+    // Lọc theo level được chọn
+    let filteredData = leaderboard.filter(item => {
+        if (filterValue === "1") return true; // All
+        if (filterValue === "2") return item.level === "Easy";
+        if (filterValue === "3") return item.level === "Medium";
+        if (filterValue === "4") return item.level === "Hard";
+        if (filterValue === "5") return item.level === "Impossible";
+        return true;
+    });
+
+    container.innerHTML = "";
+
+    if (filteredData.length === 0) {
+        container.innerHTML = `<div class="leaderboard-item" style="text-align:center;"><span>No data yet!</span></div>`;
+        return;
+    }
+
+    filteredData.forEach(item => {
+        let box = document.createElement("div");
+        box.className = "leaderboard-item";
+        box.innerHTML = `
+            <span>Name: ${item.name}</span>
+            <span>Level: ${item.level}</span>
+            <span>Time: ${item.time}</span>
+            <span>Score: ${item.score}</span>
+        `;
+        container.appendChild(box);
+    });
+}
+
+// Gọi renderLeaderboard khi trang tải xong nếu ở trang leaderboard
+if (document.getElementById("leaderboard-list")) {
+    renderLeaderboard();
+}
+
+// Cập nhật lại hàm kết thúc game để tự động lưu vào leaderboard
+function showResultAndRedirect() {
+    saveToLeaderboard(); // Lưu dữ liệu vào leaderboard trước khi báo kết quả
+
+    if (score <= 10) {
+        alert("Finished!\nScore: " + score + "\nYou're not chill ");
+    } else if (score <= 50) {
+        alert("Finished!\nScore: " + score + "\nYou're getting started ");
+    } else if (score <= 100) {
+        alert("Finished!\nScore: " + score + "\nYou're pretty chill ");
+    } else {
+        alert("Finished!\nScore: " + score + "\nYou're a chill guy ");
+    }
+    window.location.href = "index.html";
 }
