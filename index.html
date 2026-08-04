@@ -1,51 +1,96 @@
-<html> 
+
+<!DOCTYPE html>
+<html>
+
 <head>
+    <title>Chill Guy Testing</title>
 
+    <link rel="stylesheet" href="style.css">
 
-<title>css learning</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
+
 <div class="container">
-<h1 id="h1">Are you really a chill guy?</h1>
-<hr id="hr1">
-<div >
-<input type="text" name="username" id="input1" placeholder="Enter your name">
-</div>
-<br>
-<label for=""; id="label1">Choose your difficulty:</label>
-<br>
-<select name="" id="selection1">
-<option value="1">Easy</option>
-<option value="2">Medium</option>
-<option value="3">Hard</option>
-<option value="4">Impossible</option>
-</select>
-<br>
-<div>
-<a href="theexam.html" id="a1">
-<button id="button1"; class="btn"; onclick="selectcheck()">Get the exam</button>
-</a>
-</div>
-<div>
-<a href="chillguystanding.html"; target="_self">
-<img src="chill guy.png" alt=""; height="500px"; width="400px">
-</a>
+
+    <h1 id="h1">Are you really a chill guy?</h1>
+
+    <hr id="hr1">
+
+
+    <div>
+        <input 
+            type="text" 
+            id="input1" 
+            placeholder="Enter your name">
+    </div>
+
+
+    <br>
+
+
+    <label id="label1">
+        Choose your difficulty:
+    </label>
+
+
+    <br>
+
+
+    <select id="selection1">
+
+        <option value="1">Easy</option>
+
+        <option value="2">Medium</option>
+
+        <option value="3">Hard</option>
+
+        <option value="4">Impossible</option>
+
+    </select>
+
+
+    <br><br>
+
+
+    <div>
+<button 
+    id="button1" 
+    class="btn"
+    onclick="selectcheck()">
+
+    Get the exam
+
+</button>
+    </div>
+
+
+
+    <div>
+
+        <a href="chillguystanding.html">
+
+            <img 
+                src="chill guy.png" 
+                alt="Chill Guy"
+                height="500px"
+                width="400px">
+
+        </a>
+
+    </div>
+
 
 </div>
+
+
+
+<script src="script.js"></script>
+
+
 </body>
 
-<script>
-function selectcheck(){
-if (selection1.value == "1"){a1.href = "theexam.html"}
-if (selection1.value == "2"){a1.href = "theexam2.html"}
-if (selection1.value == "3"){a1.href = "theexam3.html"}
-if (selection1.value == "4"){a1.href = "theexam4.html"}
-}
-</script>
-
-
 </html>
+

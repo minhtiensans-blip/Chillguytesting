@@ -29,4 +29,153 @@ height: 60px; width: 200px; font-size: large; font-family: "press start 2p";
 
 }
 #button2{background-color: rgb(204, 148, 80); width: 300px;height: 100px ; font-family: "press start 2p"; font-size: 50px; border-radius: 25px; }
-#h1-2{font-family: "press start 2p"; color: rgb(190, 156, 115);}
+#h1-2{font-family: "press start 2p"; color: rgb(190, 156, 115); text-decoration:rgb(194, 165, 130) dotted underline;}
+
+
+.answer{
+
+width:400px;
+height:70px;
+
+margin:10px;
+
+font-family:"Press Start 2P";
+
+font-size:18px;
+
+border-radius:20px;
+
+cursor:pointer;
+
+
+transition:
+background-color 0.3s ease,
+transform 0.2s ease;
+
+
+}
+
+
+
+.answer:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+.correct{
+
+background-color:#35d04b;
+
+color:white;
+
+}
+
+
+
+.wrong{
+
+background-color:#ff3333;
+
+color:white;
+
+}
+
+
+
+.answer:disabled{
+
+cursor:not-allowed;
+
+}
+.h1{
+    font-family: "press start 2p","consolas";
+}
+#question{font-family:"press start 2p";}
+#score{font-family:"press start 2p";}
+#exitbtn{background-color: #ff3333; color: white; font-family: "press start 2p"; font-size: x-large; height: 100px; width: 200px; border-radius: 35px;}
+/* INPUT ERROR EFFECT */
+
+
+.errorInput::placeholder{
+
+color:red;
+
+}
+
+
+
+.errorInput{
+
+animation: shake 0.5s;
+
+border:3px solid red;
+
+}
+
+
+
+@keyframes shake{
+
+
+0%{
+transform:translateX(0);
+}
+
+
+20%{
+transform:translateX(-15px);
+}
+
+
+40%{
+transform:translateX(15px);
+}
+
+
+60%{
+transform:translateX(-15px);
+}
+
+
+80%{
+transform:translateX(15px);
+}
+
+
+100%{
+transform:translateX(0);
+}
+
+
+}
+/* ================= TIMER SYSTEM STYLES ================= */
+#timer-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 15px auto;
+    text-align: center;
+}
+
+#timer-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.timer-bg {
+    width: 100%;
+    height: 16px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#timer-bar {
+    width: 100%;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.1s linear;
+}

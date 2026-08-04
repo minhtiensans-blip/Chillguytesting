@@ -1,9 +1,72 @@
 <html>
-    <head>
+
+<head>
+
+<title>Medium</title>
+
 <link rel="stylesheet" href="style.css">
-<title>Hard</title>
-    </head>
-    <body>
-        <h1>Exam hard</h1>
-    </body>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+<!-- ================= TIMER SYSTEM CONTAINER ================= -->
+<div id="timer-container" style="width: 80%; max-width: 600px; margin: 10px auto; text-align: center;">
+    <div id="timer-text" style="font-size: 18px; font-weight: bold; margin-bottom: 5px;">Time Left: <span id="time-left">0</span>s</div>
+    <div style="width: 100%; background-color: #e0e0e0; border-radius: 10px; overflow: hidden; height: 16px;">
+        <div id="timer-bar" style="width: 100%; height: 100%; background-color: #4caf50; transition: width 0.1s linear;"></div>
+    </div>
+</div>
+<p id="timeText"></p>
+
+<div class="container">
+
+
+<h1 class="h1">
+Hard Level
+</h1>
+
+
+<h2 id="question">
+Loading...
+</h2>
+<br>
+<a href="index.html">
+<button class="btn" id="exitbtn">Exit</button>
+</a>
+
+<button class="answer" id="A" onclick="Answer('A')">
+A
+</button>
+
+
+<button class="answer" id="B" onclick="Answer('B')">
+B
+</button>
+
+
+<button class="answer" id="C" onclick="Answer('C')">
+C
+</button>
+
+
+<button class="answer" id="D" onclick="Answer('D')">
+D
+</button>
+
+
+
+<h2 id="score">
+Score:0
+</h2>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+
+</body>
+
 </html>
