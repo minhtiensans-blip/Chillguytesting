@@ -242,3 +242,7 @@ transform:translateX(0);
     color: #4a3520;
     line-height: 1.4;
 }
+#timer-container{
+    font-family: "press start 2p";
+}
+
